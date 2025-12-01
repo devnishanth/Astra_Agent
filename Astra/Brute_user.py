@@ -38,12 +38,12 @@ def main():
             #print("[+] Sending POST request to:", args.url)
             #print(requests.post(url, data=payload))
             response = requests.post(url, data=payload, headers=headers)
-            s = requests.Session()
-            req = requests.Request(method="POST", url=url, data=payload, headers=headers)
-            prepped = s.prepare_request(req)
-            print(prepped.body)
-            #if response.status_code == "302":
-            print(f"[+] Username: {i} & Password:{j} Status Code:", response.status_code)
+            #s = requests.Session()
+           # req = requests.Request(method="POST", url=url, data=payload, headers=headers)
+            #prepped = s.prepare_request(req)
+            #print(prepped.body)
+            if response.status_code == "302":
+                print(f"[+] Username: {i} & Password:{j} Status Code:", response.status_code)
 
 
 if __name__ == "__main__":
